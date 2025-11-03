@@ -7,7 +7,6 @@
   <title>Cole Propach | Portfolio</title>
 
   <style>
-    /* Reset */
     * {
       margin: 0;
       padding: 0;
@@ -16,7 +15,7 @@
 
     body {
       font-family: "Inter", "Segoe UI", sans-serif;
-      background-color: #f9fafb;
+      background-color: #BFDBFE;
       color: #222;
       line-height: 1.6;
       display: flex;
@@ -25,25 +24,25 @@
     }
 
     header {
-      background: #1a1a1a;
+      background: #1E3A8A;
       color: white;
       text-align: center;
       padding: 2.5rem 1rem;
     }
 
     header h1 {
-      font-size: 2rem;
+      font-size: 4rem;
       letter-spacing: 1px;
     }
 
     header p {
       margin-top: 0.5rem;
-      font-size: 1rem;
+      font-size: 1.5rem;
       color: #ccc;
     }
 
     nav {
-      background: #fff;
+      background: #3B82F6;
       border-bottom: 1px solid #ddd;
       display: flex;
       justify-content: center;
@@ -53,8 +52,9 @@
 
     nav a {
       text-decoration: none;
-      color: #333;
+      color: #F8FAFC;
       font-weight: 500;
+      font-size: 2rem;
     }
 
     nav a:hover {
@@ -79,7 +79,7 @@
       font-size: 1.5rem;
     }
 
-    .project {
+    .box {
       background: #fff;
       padding: 1.5rem;
       border-radius: 10px;
@@ -111,55 +111,48 @@
     footer a:hover {
       text-decoration: underline;
     }
+
+    .logo {
+        width: 30px;
+        height: 30px;
+        object-fit: contain;
+        vertical-align: middle;
+        margin: 5px;
+    }
   </style>
 </head>
 
 <body>
   <header>
-    <h1>Projects</h1>
+    <h1>Cole Propach</h1>
     <p>Computer Science & Engineering | Santa Clara University</p>
   </header>
 
   <nav>
-    <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#contact">Contact</a>
+    <a href="https://colepropach.com">Home</a>
+    <a href="https://colepropach.com/projects">Projects</a>
+    <a href="https://colepropach.com/resume">Resume</a>
+    <a href="https://colepropach.com/contact">Contact</a>
   </nav>
 
   <main>
-    <section id="projects">
-      <h2>Projects</h2>
+    <section id="about">
+      <h2>About Me</h2>
 
-      <div class="project">
+      <div class="box">
         <h3>Simple C Compiler</h3>
         <p>A custom compiler for a simplified C-like language, featuring semantic analysis and code generation in C++.</p>
       </div>
-
-      <div class="project">
-        <h3>Language Learning Game</h3>
-        <p>A 2D game that teaches a fictional language through interactive gameplay, built with Python and Pygame.</p>
-      </div>
-
-      <div class="project">
-        <h3>Membership Log Tracker</h3>
-        <p>A PHP web app for comparing and tracking pottery studio member records using CSV data.</p>
-      </div>
-    </section>
-
-    <section id="experience">
-      <h2>Experience</h2>
-      <p><strong>Blossom Hill Crafts – Pottery Studio Intern (Summer 2024)</strong><br>
-      Automated member log comparison and streamlined data management using PHP and AppleScript tools.</p>
-
-      <p><strong>Santa Clara University</strong><br>
-      Coursework in Compiler Design, Operating Systems, and Computer Graphics. Minor in Music focusing on harmonica, piano, guitar, and ukulele.</p>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
-      <p>Email: <a href="mailto:colepropach@gmail.com">colepropach@gmail.com</a></p>
-      <p>GitHub: <a href="https://github.com/ColePropach" target="_blank">github.com/ColePropach</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/colepropach" target="_blank">linkedin.com/in/colepropach</a></p>
+      <div class="box">
+        <p><img src="https://cole-propach.github.io/website/images/emailLogo.png" class="logo"> Email: <a href="mailto:colepropach@gmail.com">colepropach@gmail.com</a></p>
+        <p><img src="images/phoneLogo.png" class="logo"> Phone Number: (408) 908-0944</p>
+        <p><img src="images/linkedinLogo.png" class="logo"> LinkedIn: <a href="https://www.linkedin.com/in/cole-propach-330138257" target="_blank">https://www.linkedin.com/in/cole-propach-330138257</a></p>
+        <p><img src="images/githubLogo.png" class="logo"> GitHub: <a href="https://github.com/cole-propach" target="_blank">github.com/cole-propach</a></p>
+      </div>
     </section>
   </main>
 
