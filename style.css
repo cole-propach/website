@@ -111,3 +111,14 @@
         vertical-align: middle;
         margin: 5px;
     }
+
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    header, nav {
+      width: 100%;
+      margin: 0;
+    }
