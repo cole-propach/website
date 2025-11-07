@@ -122,3 +122,16 @@
       width: 100%;
       margin: 0;
     }
+
+    ul {
+      padding-left: 1.5rem; /* adds indentation */
+      margin-bottom: 1rem;  /* optional spacing after list */
+    }
+
+    ul ul {
+        padding-left: 1.5rem; /* extra indentation for nested lists */
+    }
+
+    li {
+        margin-bottom: 0.5rem; /* optional spacing between items */
+    }

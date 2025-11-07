@@ -34,6 +34,45 @@
         <p>One day I decided I wanted to try to make a game from scratch in C++ without any game engine. I wanted to start with something simple as a proof of concept. I decided to recreate the classic Snake game using WinAPI, which is a C++ library that allows you to interface with the Windows operating system and compile to a Windows .exe file.</p>
         <img src="https://cole-propach.github.io/website/images/snake.gif" alt="Gameplay of Snake.exe" />
       </div>
+      <h2>Cole's Cellular Automaton</h2>
+      <div class="box">
+        <p>I was inspired by Conway's Game of Life and wanted to make my own cellular automaton with my own set of rules. For information about what a cellular automaton is, check out the wikipedia page <a href="https://en.wikipedia.org/wiki/Cellular_automaton" target="_blank">here</a>.</p>
+        <a href="https://colepropach.com/cca" target="_blank">Try it out!</a>
+        <p>
+          Like Conway's Game of Life, my cells can be in one of 2 states: alive, or dead. <br>A cell's neighborhood is composed of 4 leaves (labeled with 1, 2, 3, and 4). 0s are ignored cells, and <strong>C</strong> is the cell whose neighborhood we are looking at.<br><br>
+        </p>
+          
+        <pre>
+        0 0 1 0 0
+        0 0 1 0 0
+        4 4 C 2 2
+        0 0 3 0 0
+        0 0 3 0 0
+        </pre>
+
+        <p>Leaves can be in 1 of 3 states, depending on the number of live cells it contains:</p>
+        <ul>
+            <li><strong>Unpopulated:</strong> The leaf has exactly 0 live cells</li>
+            <li><strong>Semi Populated:</strong> The leaf has exactly 1 live cell</li>
+            <li><strong>Fully Populated:</strong> The leaf has exactly 2 live cells</li>
+        </ul>
+
+        <p>Rules (inspired by Conway's Game of Life):</p>
+        <ul>
+            <li><strong>Live Cells</strong>
+                <ul>
+                    <li><strong>Overpopulation:</strong> A live cell with any fully populated leaves dies.</li>
+                    <li><strong>Underpopulation:</strong> A live cell with 0 semi populated leaves dies.</li>
+                    <li><strong>Survival:</strong> A live cell with any semi populated leaves stays alive.</li>
+                </ul>
+            </li>
+            <li><strong>Dead Cells</strong>
+                <ul>
+                    <li><strong>Reproduction:</strong> A dead cell with exactly 2 semi populated leaves becomes alive.</li>
+                </ul>
+            </li>
+        </ul>
+      </div>
     </section>
 
     <section id="contact">
