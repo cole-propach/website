@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Canvas Example</title>
+  <style>
+    body { margin: 0; background: #222; }
+    canvas { display: block; margin: auto; background: #fff; }
+  </style>
+</head>
+<body>
+  <!-- Create a canvas with width and height -->
+  <canvas id="myCanvas" width="600" height="400"></canvas>
+
+  <script>
+    // Get the canvas and its 2D rendering context
+    const canvas = document.getElementById('myCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // Draw a rectangle
+    ctx.fillStyle = 'skyblue';
+    ctx.fillRect(100, 100, 200, 150);
+
+    // Draw a red circle
+    ctx.beginPath();
+    ctx.arc(400, 200, 50, 0, Math.PI * 2);
+    ctx.fillStyle = 'red';
+    ctx.fill();
+
+    // Draw text
+    ctx.fillStyle = 'black';
+    ctx.font = '24px Arial';
+    ctx.fillText('Hello Canvas!', 230, 50);
+
+    // Animate something
+    let x = 0;
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height); // clear screen
+
+      // moving blue square
+      ctx.fillStyle = 'skyblue';
+      ctx.fillRect(x, 150, 50, 50);
+
+      x += 2;
+      if (x > canvas.width) x = -50;
+
+      requestAnimationFrame(animate); // schedule next frame
+    }
+
+    animate();
+  </script>
+</body>
+</html>
