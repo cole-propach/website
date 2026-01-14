@@ -6,7 +6,7 @@ let deltaTime = 0;
 
 async function runExe(arg1, arg2) {
   // Construct the URL (encode arguments to be URL-safe)
-  const url = `https://heckyya.lol:3000/run?arg1=${encodeURIComponent(arg1)}&arg2=${encodeURIComponent(arg2)}`;
+  const url = `https://heckyya.lol/run?arg1=${encodeURIComponent(arg1)}&arg2=${encodeURIComponent(arg2)}`;
 
   try {
     const response = await fetch(url);  // Fetch from server
