@@ -43,14 +43,41 @@
         <p>I made it from scratch in C++ without an engine using the SDL2 library. I decided to use SDL2 instead of WinAPI (what I used for Snake.exe) because SDL2 can be compiled to most platforms, whereas WinAPI can only be compiled to Windows. It is a work in progress passion project that I hope to complete by early 2026.</p>
         <video src="https://cole-propach.github.io/website/images/orebloodPeak.mp4" controls style="display: block; margin: 0 auto; width: 80%; max-width: 600px;" alt="Gameplay of Oreblood Peak"></video>
       </div>
-      <h2>Snake.exe</h2>
+      <h2>Connect 4 Engine</h2>
       <div class="box">
-        <p>One day I decided I wanted to try to make a game from scratch in C++ without any game engine. I wanted to start with something simple as a proof of concept. I decided to recreate the classic Snake game using WinAPI, which is a C++ library that allows you to interface with the Windows operating system and compile to a Windows .exe file.</p>
-        <img src="https://cole-propach.github.io/website/images/snake.gif" alt="Gameplay of Snake.exe" />
+        <a href="https://colepropach.com/connect4" target="_blank">Try it here!</a>
+        <p>This is a high-performance Connect Four engine written in C++, with a JavaScript front end and Node.js server. It plays optimally by evaluating possible board positions and selecting the best moves using a depth-limited search. Key features include:</p>
+        <ul>
+          <li><strong>Minimax with Alpha-Beta Pruning:</strong> <a href="https://www.chessprogramming.org/Minimax" target="_blank">Minimax</a> is an algorithm used for finding the best move in a two player, zero sum game. It involves searching the tree of every possible move and determining which move each player will take.</li>
+          <li><strong>Alpha-Beta Pruning:</strong> <a href="https://www.chessprogramming.org/Alpha-Beta" target="_blank">Alpha-Beta pruning</a> is an improvement to Minimax that allows you to prune off (not search) moves that would always result in a worse score than is already obtainable through a better move that has already been examined.</li>
+          <li><strong>Transposition Table:</strong> <a href="https://www.chessprogramming.org/Transposition_Table" target="_blank">Transposition Tables</a> allow you to store previously calculated positions to prevent redoing the same work. Having one is an essential requirement for implementing Lazy SMP.</li>
+          <li><strong>Multithreading using Lazy SMP:</strong> Multithreading allows for parallelisation, which can drastically improve performance. <a href="https://www.chessprogramming.org/Lazy SMP" target="_blank">Lazy SMP</a> is a common algorithm used by engines to implement a multithreaded approach in a relatively simple, or "lazy" way. Every does thread does the same minimax search on the starting position, but have a shared lockless transposition table. This allows the threads to share work and communicate in a simple but extremely functional way.</li>
+          <li><strong>Zobrist Hashing:</strong> <a href="https://www.chessprogramming.org/Zobrist_Hashing" target="_blank">Zobrist Hashing</a> is a method of generating unique hash keys for every position. Each board state has a unique, fast-to-compute key, ensuring efficient recognition of identical states even if reached via different move sequences.</li>
+          <li><strong>Move Ordering and Heuristics:</strong> Moves are evaluated in an order that increases pruning efficiency, with center columns prioritized for stronger play.</li>
+        </ul>
+        <div style="display: flex; justify-content: center;">
+          <img src="https://cole-propach.github.io/website/images/connect4gameplay.png" alt="Connect 4 gameplay" width="300" height="300"/>
+        </div>
       </div>
+      <h2>Chess</h2>
+      <div class="box">
+        <a href="https://colepropach.com/chess" target="_blank">Try it here!</a>
+        <p>Recreated Chess for two local players in Unity using C#. The game enforces legal moves and includes a custom promotion UI, allowing promotion to any legal piece. All board and piece sprites are custom-made in a pixel art style.</p>
+        <ul>
+          <li><strong>Two-Player Local Play:</strong> Designed for two players on the same device, with enforced legal moves.</li>
+          <li><strong>Legal Move Generation:</strong> Every piece moves according to standard chess rules, with checks for check, checkmate, and stalemate.</li>
+          <li><strong>Custom Promotion UI:</strong> Allows players to choose any legal piece when promoting a pawn.</li>
+          <li><strong>Handmade Sprites:</strong> Board and piece designs are fully custom (the knight was by far the hardest piece to make in the low pixel art resolution, but I'm happy with how it turned out). </li>
+          <li><strong>Unity Implementation:</strong> Built entirely in C# within Unity, making it easy to expand or adapt for other projects.</li>
+        </ul>
+        <div style="display: flex; justify-content: center;">
+          <img src="https://cole-propach.github.io/website/images/chessGameplay.png" alt="Chess gameplay" width="300" height="300"/>
+        </div>
+      </div>
+      
       <h2>Cole's Cellular Automaton</h2>
       <div class="box">
-        <p> <a href="https://colepropach.com/cca" target="_blank"><img src="https://cole-propach.github.io/website/images/snowflake.gif" alt="Showcase of the snowflake pattern I found in my cellular automaton" /><br>Click here to try out my cellular automaton!</a> <br>
+        <p> <a href="https://colepropach.com/cca" target="_blank"><div style="display: flex; justify-content: center;"><img src="https://cole-propach.github.io/website/images/snowflake.gif" alt="Showcase of the snowflake pattern I found in my cellular automaton" /><br>Click here to try out my cellular automaton!</a> <br></div>
           I was inspired by Conway's Game of Life and wanted to make my own cellular automaton with my own set of rules. For information about what a cellular automaton is, check out the wikipedia page <a href="https://en.wikipedia.org/wiki/Cellular_automaton" target="_blank">here</a>.</p>
         <p>
           Like Conway's Game of Life, my cells can be in one of 2 states: alive, or dead. <br>A cell's neighborhood is composed of 4 leaves (labeled with 1, 2, 3, and 4). 0s are ignored cells, and C is the cell whose neighborhood we are looking at.<br><br>
@@ -88,6 +115,13 @@
         </ul>
         <p>I coded the program in C++ with SDL2 and compiled it to web assembly using <a href="https://emscripten.org">emscripten</a> so it could be easily run in the browser. <br>
         After I finished the basic program I played around with it a bunch by making random chaotic shapes and seeing how they would evolve over time. I discovered many interesting properties and configurations. I added the 9 most interesting configurations I found as presets that can be loaded in with the number keys. My favorite find was a stable cycle that has 81 unique states before returning back to the original state.</p>
+      </div>
+      <h2>Snake.exe</h2>
+      <div class="box">
+        <p>One day I decided I wanted to try to make a game from scratch in C++ without any game engine. I wanted to start with something simple as a proof of concept. I decided to recreate the classic Snake game using WinAPI, which is a C++ library that allows you to interface with the Windows operating system and compile to a Windows .exe file.</p>
+        <div style="display: flex; justify-content: center;">
+          <img src="https://cole-propach.github.io/website/images/snake.gif" alt="Gameplay of Snake.exe" width="300" height="300"/>
+        </div>
       </div>
     </section>
 
