@@ -4,7 +4,7 @@ import { images } from "./images.js";
 let messageNumber = getRandomInt(0, messages.length-1);
 let imageNumber = getRandomInt(0, images.length-1);
 document.getElementById("message").textContent = messages[messageNumber];
-document.getElementById("display").src = "colepropach.com/pookie/images/"+images[imageNumber];
+document.getElementById("display").src = "https://colepropach.com/pookie/images/"+images[imageNumber];
 
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -23,7 +23,7 @@ function newRandomImage(){
     while(imageNumber == oldNumber){
         imageNumber = getRandomInt(0, images.length-1);
     }
-    document.getElementById("display").src = "colepropach.com/pookie/images/"+images[imageNumber];
+    document.getElementById("display").src = "https://colepropach.com/pookie/images/"+images[imageNumber];
 }
 
 const refreshButton = document.getElementById("refreshButton");
